@@ -137,11 +137,6 @@
      "[attribute @objc][punctuation (][variable objcFoo][punctuation :)]",
      "[attribute @available][punctuation (][variable iOS][punctuation )]");
 
-  // Property/number edge case.
-  MT("property_number",
-     "[variable print][punctuation (][variable foo][property ._123][punctuation )]",
-     "[variable print][punctuation (]")
-
   // TODO: correctly identify when multiple variables are being declared
   // by use of a comma-separated list.
   // TODO: correctly identify when variables are being declared in a tuple.
