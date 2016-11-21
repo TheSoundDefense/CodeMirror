@@ -71,10 +71,9 @@ var CodeMirror;
 
       // If the complexity is high enough, it's a lint error.
       if (currentComplexity > 10) {
+        currentFuncError.severity = 'warning';
         if (currentComplexity > 20) {
           currentFuncError.severity = 'error';
-        } else {
-          currentFuncError.severity = 'warning';
         }
         currentFuncError.message = baseMessage + functions[i].name + ' is ' + 
                                    currentComplexity + '.';
@@ -99,10 +98,9 @@ var CodeMirror;
       };
       var lineArray = currentFuncError.code.split('\n');
       if (lineArray.length > 40) {
+        currentFuncError.severity = 'warning';
         if (lineArray.length > 100) {
           currentFuncError.severity = 'error';
-        } else {
-          currentFuncError.severity = 'warning';
         }
         currentFuncError.message = baseMessage + functions[i].name + ' currently has ' +
                                    lineArray.length + ' lines.';
@@ -352,10 +350,9 @@ var CodeMirror;
       };
       var lineArray = currentTypeError.code.split('\n');
       if (lineArray.length > 200) {
+        currentTypeError.severity = 'warning';
         if (lineArray.length > 350) {
           currentTypeError.severity = 'error';
-        } else {
-          currentTypeError.severity = 'warning';
         }
         currentTypeError.message = baseMessage + types[i].type + ' ' + types[i].name + 
                                    ' currently has ' + lineArray.length + ' lines.';
